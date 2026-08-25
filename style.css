@@ -26,7 +26,7 @@
 /* Container gambar produk */
 .product-thumb {
   width: 100%;
-  height: 300px; /* Tinggi area foto */
+  height: 400px; /* Tinggi area foto */
   display: flex;
   align-items: center;
   justify-content: center;
