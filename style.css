@@ -518,7 +518,7 @@ footer,
   width: 100% !important;
   margin: 0 !important;
   background: #ffffff !important;
-  border-radius: 20px !important;
+  border-radius: 30px !important;
   padding: 40px 20px !important;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08) !important;
   border: 1px solid #eaeaea !important;
@@ -530,8 +530,8 @@ footer,
 }
 
 #page-tentang .arigal-card .arigal-logo-wrapper {
-  max-width: 250px !important;
-  width: 100% !important;
+  max-width: 2500px !important;
+  width: 500% !important;
 }
 
 /* Konten Teks di Kanan */
@@ -560,7 +560,7 @@ footer,
 /* ========================================================== */
 .values-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important; /* Memaksa jadi 3 kolom sejajar */
+  grid-template-columns: repeat(3, 1fr) !important;
   gap: 24px !important;
   max-width: 1200px !important;
   margin: 30px auto 50px auto !important;
@@ -577,8 +577,24 @@ footer,
   box-sizing: border-box !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: flex-start !important; /* Atau center jika ingin posisinya di tengah */
+  align-items: center !important; 
+  text-align: center !important; /* <-- Kunci agar semua teks di dalam kartu rata tengah */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Memastikan judul dan paragraf benar-benar di tengah */
+.value-card h3,
+.value-card p {
+  text-align: center !important;
+  width: 100% !important;
+}
+
+/* Memastikan kotak ikon/logo berada tepat di tengah */
+.value-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 16px auto !important;
 }
 
 .value-card:hover {
@@ -586,7 +602,7 @@ footer,
   box-shadow: 0 10px 25px rgba(41, 171, 226, 0.12);
 }
 
-/* Responsif untuk HP (tetap 1 kolom ke bawah jika di layar kecil) */
+/* Responsif untuk HP */
 @media (max-width: 768px) {
   .values-grid {
     grid-template-columns: 1fr !important;
@@ -594,6 +610,8 @@ footer,
     padding: 0 16px !important;
   }
 }
+
+
 
 
 
@@ -673,3 +691,5 @@ footer, .footer-container, .site-footer {
   text-align: center !important;
   width: 100% !important;
 }
+
+
