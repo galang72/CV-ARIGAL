@@ -645,3 +645,31 @@ footer, .footer-container, .site-footer {
   font-style: italic !important;
   letter-spacing: 0.5px !important;
 }
+
+
+
+/* Mengatur kotak kartu utama agar isinya berada di tengah */
+.value-card {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Mengatur kotak pembungkus ikon agar posisinya di tengah */
+.value-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 12px !important;
+}
+
+/* Memastikan judul dan paragraf ikut berada di tengah */
+.value-card h3, 
+.value-card p {
+  text-align: center !important;
+  width: 100% !important;
+}
