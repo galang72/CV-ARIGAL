@@ -1,9 +1,116 @@
+/* ========================================================== */
+/* 1. GLOBAL & PENGATUR HALAMAN (SPA VISIBILITY SYSTEM)        */
+/* ========================================================== */
+body {
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+/* Secara default, semua halaman disembunyikan agar tidak bocor ke halaman lain */
+.page {
+  display: none !important;
+}
+
+/* Hanya tampilkan halaman yang memiliki kelas aktif/show */
+.page.active, 
+.page.show,
+#page-tentang.active,
+#page-tentang.show {
+  display: block !important;
+}
+
+body h1, body h2, body h3, body h4 {
+  font-family: 'Plus Jakarta Sans', 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.logo, .nav-brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Hero Title */
+.hero h1, 
+.hero-title {
+  font-weight: 800;
+  font-size: 2.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.hero-title span,
+.text-highlight {
+  color: #00a8ff;
+  font-weight: 800;
+}
+
+/* ========================================================== */
+/* 2. TATA LETAK KHUSUS HALAMAN ABOUT (2 KOLOM SEJAJAR)       */
+/* ========================================================== */
+#page-tentang.active,
+#page-tentang.show {
+  display: block !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#page-tentang > .about-banner {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Wadah Grid 2 Kolom untuk Logo di Kiri & Teks di Kanan */
+#page-tentang .about-main-container {
+  display: grid !important;
+  grid-template-columns: 380px 1fr !important;
+  gap: 40px !important;
+  align-items: center !important;
+  max-width: 1200px !important;
+  margin: -60px auto 60px auto !important;
+  padding: 0 20px !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+#page-tentang .arigal-card {
+  width: 100% !important;
+  margin: 0 !important;
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 40px 20px !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #eaeaea !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 280px !important;
+}
+
+#page-tentang .arigal-card .arigal-logo-wrapper {
+  max-width: 250px !important;
+  width: 100% !important;
+}
+
+#page-tentang .about-content {
+  width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* ========================================================== */
+/* 3. PARTNER GRID                                            */
+/* ========================================================== */
 .partner-grid {
   display: flex;
-  flex-wrap: wrap; /* Membuat elemen otomatis turun ke bawah jika tidak muat */
-  justify-content: center; /* Merapikan logo ke tengah */
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 20px; /* Jarak antarlogo */
+  gap: 20px;
   padding: 20px 0;
 }
 
@@ -16,145 +123,217 @@
 }
 
 .partner-chip img {
-  max-width: 200px; /* Lebar maksimal logo */
-  max-height: 100px;  /* Tinggi maksimal logo agar seragam */
+  max-width: 200px;
+  max-height: 100px;
   width: auto;
   height: auto;
   object-fit: contain;
 }
 
-/* Container gambar produk */
+/* ========================================================== */
+/* 4. PRODUCT THUMB                                           */
+/* ========================================================== */
 .product-thumb {
   width: 100%;
-  height: 400px; /* Tinggi area foto */
+  height: 200px; /* Sesuaikan tinggi kotak gambar, misal 200px agar lebih proporsional */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f8f9fa; /* Warna latar belakang foto */
+  background-color: #ffffff; /* Bisa diganti #f8f9fa jika ingin agak abu-abu */
   overflow: hidden;
   border-radius: 8px 8px 0 0;
 }
 
-/* Pengaturan gambar produk */
 .product-thumb img {
-  width: 100%;
-  height: 100%;
-  /* object-fit: contain; /* Memastikan seluruh produk terlihat tanpa terpotong */
-  padding: 10px;       /* Jarak aman agar gambar tidak menempel ke pinggir */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Kunci agar gambar menyesuaikan secara utuh di dalam kotak */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-/* Terapkan font ke seluruh halaman */
-body {
-  h1,h2,h3,h4{font-family:'Plus Jakarta Sans','Space Grotesk',sans-serif;font-weight:700;letter-spacing:-0.03em;line-height:1.2;}
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Tipografi untuk Header / Brand Name */
-.logo, .nav-brand {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-/* Tipografi untuk Hero Title (Tulisan Utama) */
-.hero h1, 
-.hero-title {
-  font-weight: 800;
-  font-size: 2.75rem; /* Sesuaikan ukuran jika perlu */
-  line-height: 1.2;    /* Jarak antarbaris agar tidak terlalu renggang */
-  letter-spacing: -0.03em; /* Karakter lebih rapat khas desain modern */
-}
-
-/* Efek warna pada kata penekanan (Enterprise IT Solutions) */
-.hero-title span,
-.text-highlight {
-  color: #00a8ff; /* Sesuaikan dengan warna biru brand Anda */
-  font-weight: 800;
-}
-
-.vision-mission-wrapper {
+/* ========================================================== */
+/* 5. VISION & MISSION / VALUES                               */
+/* ========================================================== */
+.vm-grid, .values-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-top: 24px;
 }
 
-.vision-box, .mission-box {
+.vm-item, .value-card {
   background: #ffffff;
-  padding: 16px 20px;
-  border-radius: 8px;
-  border-left: 4px solid var(--cyan); /* Memberi aksen garis di sebelah kiri */
+  border: 1px solid rgba(225, 232, 234, 0.8);
+  border-radius: 12px;
+  padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.vision-box h4, .mission-box h4 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
+.vm-item:hover, .value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(54, 215, 231, 0.12);
+}
+
+.vm-title {
   display: flex;
   align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
-.contact-card-link {
-  text-decoration: none;
-  color: inherit;
+.vm-title h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #0f2a3f;
+}
+
+.vm-icon, .value-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #29abe2;
+}
+
+.value-icon {
+  width: 56px;
+  height: 56px;
+  background: #EBFBFC;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.vm-item p, .value-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #5a6e7f;
+}
+
+/* ========================================================== */
+/* 6. SERVICES GRID                                           */
+/* ========================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(225, 232, 234, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0, 128, 255, 0.08);
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  background: #f0f7ff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: #0f2a3f;
+  margin: 0 0 12px 0;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #5a6e7f;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ========================================================== */
+/* 7. ARIGAL LOGO CARD (UMUM)                                 */
+/* ========================================================== */
+.arigal-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.arigal-logo-wrapper {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  justify-content: center;
+}
+
+.arigal-logo-svg {
+  width: 100%;
+  height: auto;
   display: block;
 }
 
-.contact-card-link:hover .contact-info-card {
-  transform: translateY(-3px);
-  transition: transform 0.2s ease;
-}
-
-
-/* 1. Paksa elemen terakhir sebelum footer agar tidak punya margin bawah yang besar */
-body > *:last-child,
-.page.active > *:last-child,
-.main-content > *:last-child {
-  margin-bottom: 0 !important;
-  padding-bottom: 10px !important;
-}
-
-/* 2. Atur ulang padding container utama atau pembungkus footer */
-footer, 
-.site-footer, 
-#footer,
-[class*="footer"] {
-  margin-top: 0 !important;
-  padding-top: 15px !important;
-}
-
-
-
-
-/* ================= CONTACT PAGE ================= */
+/* ========================================================== */
+/* 8. CONTACT PAGE                                            */
+/* ========================================================== */
 .contact-head {
   padding: 50px 24px 30px;
   text-align: center;
 }
+
 .contact-head h2 {
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   margin-bottom: 8px;
   color: var(--ink);
 }
+
 .contact-head p {
   color: var(--steel);
 }
 
-/* 1. Wrapper Utama: Kolom Kiri & Ranan Sejajar Atas (Top-Aligned) */
 .contact-content-wrapper {
   display: grid !important;
   grid-template-columns: 1fr 1.3fr !important;
   gap: 28px !important;
-  align-items: start !important; /* Membuat tinggi mengikuti isi konten masing-masing */
+  align-items: start !important;
   max-width: 1000px;
   width: 100%;
-  margin: 0 auto 80px auto !important;
+  margin: 0 auto 40px auto !important;
   padding: 0 24px;
   box-sizing: border-box;
 }
 
-/* 2. Kolom Kiri: Kartu Menyesuaikan Isi Teks */
 .contact-info-grid {
   display: flex !important;
   flex-direction: column !important;
@@ -162,13 +341,15 @@ footer,
 }
 
 .contact-card-link {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none !important;
+  color: inherit !important;
   display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .contact-info-card {
-  background: var(--white);
+  background: #ffffff;
   border-radius: 12px;
   padding: 22px 20px;
   text-align: center;
@@ -179,40 +360,32 @@ footer,
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.contact-info-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--cyan);
-}
-
-.contact-info-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
+.contact-card-link:hover .contact-info-card {
+  transform: translateY(-4px);
+  border-color: #29abe2;
+  box-shadow: 0 8px 20px rgba(41, 171, 226, 0.15);
 }
 
 .contact-info-card h4 {
   font-size: 0.95rem;
   margin-bottom: 6px;
-  color: var(--navy);
+  color: #0f2a3f;
 }
 
 .contact-info-card p {
   font-size: 0.85rem;
-  color: var(--steel);
+  color: #5a6e7f;
   line-height: 1.45;
   margin: 0;
 }
 
-/* 3. Form Kanan */
 .contact-form-wrap {
-  background: var(--white);
+  background: #ffffff;
   border-radius: 16px;
   padding: 32px !important;
   border: 1px solid #E1E8EA;
   box-shadow: 0 8px 24px rgba(15, 42, 63, 0.05);
   box-sizing: border-box;
-  margin: 0 !important;
 }
 
 .contact-form {
@@ -246,426 +419,229 @@ footer,
   min-height: 120px;
 }
 
-.form-submit {
-  width: 100%;
-  padding: 12px;
+/* ========================================================== */
+/* 9. FOOTER & SPACING BAWAH                                  */
+/* ========================================================== */
+footer, 
+.site-footer, 
+#footer,
+[class*="footer"] {
+  margin-top: 0 !important;
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
+  height: auto !important;
+  min-height: 0 !important;
 }
 
-/* 4. Responsif Mobile */
-@media (max-width: 860px) {
+/* ========================================================== */
+/* 10. RESPONSIF MOBILE (MAX 768px)                           */
+/* ========================================================== */
+@media (max-width: 768px) {
+  #page-tentang .about-main-container {
+    grid-template-columns: 1fr !important;
+    margin-top: -30px !important;
+    gap: 20px !important;
+  }
+
+  .services-grid,
+  .vm-grid,
+  .values-grid,
   .contact-content-wrapper {
     grid-template-columns: 1fr !important;
-    gap: 24px !important;
-  }
-}
-
-/* Style Link Kartu Kontak (Membuat Seluruh Area Kartu Dapat Diklik) */
-  .contact-card-link {
-    text-decoration: none !important;
-    color: inherit !important;
-    display: block;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+    gap: 16px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-bottom: 20px !important;
   }
 
-  .contact-card-link:hover .contact-info-card {
-    transform: translateY(-4px);
-    border-color: var(--cyan);
-    box-shadow: 0 8px 20px rgba(41, 171, 226, 0.15);
+  .service-card,
+  .vm-item,
+  .value-card {
+    padding: 20px 16px !important;
   }
 
-  .contact-card-link:active .contact-info-card {
-    transform: translateY(-1px);
+  .arigal-card {
+    padding: 24px 16px !important;
+    border-radius: 14px !important;
   }
 
-
-
-
-  /* ================= FORCE FIX MOBILE SPACING ================= */
-@media (max-width: 768px) {
-  /* 1. Hapus tinggi paksa pada section/page agar tidak menyisa ruang kosong abu-abu */
-  .page,
-  section,
-  #page-products,
-  #page-kontak,
-  .products-section {
-    min-height: auto !important;
-    height: auto !important;
-    padding-bottom: 20px !important;
+  .arigal-logo-wrapper {
+    max-width: 250px !important;
   }
 
-  /* 2. Potong padding footer dari atas dan bawah */
   footer,
   .footer,
   #footer {
     padding-top: 20px !important;
-    padding-bottom: 16px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-
-  /* 3. Rapatkan jarak antar paragraf & judul di footer */
-  .footer p,
-  footer p {
-    margin-top: 4px !important;
-    margin-bottom: 8px !important;
-  }
-
-  .footer h4,
-  footer h4 {
-    margin-top: 12px !important;
-    margin-bottom: 4px !important;
-  }
-
-  /* 4. Rapatkan baris WhatsApp & Email */
-  .footer-contact-item {
-    margin-bottom: 4px !important;
-  }
-
-  /* 5. Rapatkan garis pembatas bawah */
-  footer hr,
-  .footer-divider,
-  .footer-bottom {
-    margin-top: 12px !important;
-    padding-top: 8px !important;
-  }
-}
-
-
-
-/* ================= SAFE MOBILE AUTO-FIT ================= */
-@media (max-width: 768px) {
-
-  /* 1. KUNCI HERO & STATS (Agar tidak menimpa/terpotong) */
-  .hero-content,
-  .hero-container,
-  [class*="hero"] {
-    height: auto !important;
-    min-height: 0 !important;
-    position: static !important;
-  }
-
-  /* Mendorong kotak stats (500+, 120+) tepat di bawah teks hero */
-  .stats-container,
-  .hero-stats,
-  .stats-grid,
-  [class*="stats"] {
-    position: relative !important;
-    top: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    margin-top: 20px !important;
-    margin-bottom: 30px !important;
-  }
-
-  /* 2. KUNCI FOOTER (Agar pas mengikuti isi teks, tidak melar) */
-  footer,
-  .footer,
-  #footer {
-    height: auto !important;
-    min-height: 0 !important;
-    position: relative !important;
-    padding-top: 24px !important;
     padding-bottom: 20px !important;
-  }
-
-  /* Merapatkan jarak vertikal antar elemen footer */
-  .footer-column,
-  .footer-block {
-    margin-bottom: 14px !important;
-  }
-
-  .footer-column h4,
-  .footer h4 {
     margin-top: 0 !important;
-    margin-bottom: 4px !important;
-  }
-
-  .footer-column p,
-  .footer p {
-    margin-top: 0 !important;
-    margin-bottom: 4px !important;
-    line-height: 1.35 !important;
-  }
-
-  .footer-bottom,
-  .footer-divider,
-  footer hr {
-    margin-top: 12px !important;
-    padding-top: 10px !important;
   }
 }
 
 
-/* Layout Grid Visi Misi */
-.vm-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-top: 24px;
+
+
+
+/* ========================================================== */
+/* TATA LETAK UTAMA (DESKTOP)                                 */
+/* ========================================================== */
+#page-tentang {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
-/* Styling Tiap Kartu */
-.vm-item {
-  background: #ffffff;
-  border: 1px solid rgba(225, 232, 234, 0.8);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  box-sizing: border-box;
+#page-tentang > .about-banner {
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-/* Judul + Icon */
-.vm-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+/* Kontainer utama 2 kolom yang aman untuk desktop */
+#page-tentang .about-main-container {
+  display: grid !important;
+  grid-template-columns: 380px 1fr !important;
+  gap: 40px !important;
+  align-items: center !important;
+  max-width: 1200px !important;
+  width: 100% !important;
+  margin: 30px auto 60px auto !important; /* Gunakan margin positif (misal 30px) agar posisinya turun ke bawah dengan aman tanpa ketarik ke atas */
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 10 !important;
 }
 
-.vm-title h4 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #0f2a3f;
+/* Kartu Logo di Kiri */
+#page-tentang .arigal-card {
+  width: 100% !important;
+  margin: 0 !important;
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 40px 20px !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #eaeaea !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 280px !important;
 }
 
-/* Icon SVG Vektor */
-.vm-icon {
-  width: 20px;
-  height: 20px;
-  stroke: #29abe2;
+#page-tentang .arigal-card .arigal-logo-wrapper {
+  max-width: 250px !important;
+  width: 100% !important;
 }
 
-.vm-item p {
-  margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: #5a6e7f;
+/* Konten Teks di Kanan */
+#page-tentang .about-content {
+  width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
-/* Responsif Layar Mobile */
+/* ========================================================== */
+/* KHUSUS RESPONSIF HP (Layar di bawah 768px saja)             */
+/* ========================================================== */
 @media (max-width: 768px) {
-  .vm-grid {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
+  #page-tentang .about-main-container {
+    grid-template-columns: 1fr !important; /* Hanya jadi 1 kolom jika benar-benar di HP */
+    margin-top: 20px !important;
+    gap: 20px !important;
+    padding: 0 15px !important;
   }
 }
 
 
 
-/* ================= SOLUSI TEKNOLOGI KAMI (RESPONSIF) ================= */
-
-/* Container Utama Grid */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 Kolom di Desktop */
-  gap: 24px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+/* ========================================================== */
+/* NILAI UTAMA: 3 KOLOM SEJAJAR KE SAMPING                    */
+/* ========================================================== */
+.values-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* Memaksa jadi 3 kolom sejajar */
+  gap: 24px !important;
+  max-width: 1200px !important;
+  margin: 30px auto 50px auto !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
 }
 
-/* Styling Kartu Layanan (Desktop) */
-.service-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 36px 28px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(225, 232, 234, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 35px rgba(0, 128, 255, 0.08);
-}
-
-/* Pembungkus Ikon (Desktop) */
-.service-icon {
-  width: 64px;
-  height: 64px;
-  background: #f0f7ff;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  flex-shrink: 0;
-}
-
-.service-card h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #0f2a3f;
-  margin: 0 0 12px 0;
-}
-
-.service-card p {
-  font-size: 0.9rem;
-  color: #5a6e7f;
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* ================= PENYESUAIAN MODE MOBILE ================= */
-@media (max-width: 768px) {
-  /* Berubah menjadi 1 Kolom di Mobile */
-  .services-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-    padding: 0 16px !important;
-  }
-
-  /* Padding kartu lebih padat agar hemat ruang */
-  .service-card {
-    padding: 24px 20px !important;
-    border-radius: 12px !important;
-  }
-
-  /* Ukuran Ikon menyesuaikan layar HP */
-  .service-icon {
-    width: 52px !important;
-    height: 52px !important;
-    margin-bottom: 14px !important;
-    border-radius: 10px !important;
-  }
-
-  .service-icon svg {
-    width: 30px !important;
-    height: 30px !important;
-  }
-
-  .service-card h3 {
-    font-size: 1.05rem !important;
-    margin-bottom: 8px !important;
-  }
-
-  .service-card p {
-    font-size: 0.85rem !important;
-    line-height: 1.45 !important;
-  }
-}
-
-
-
-
-
-
-/* Styling Kartu */
 .value-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 32px 24px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid rgba(225, 232, 234, 0.8);
-  box-shadow: 0 4px 16px rgba(15, 42, 63, 0.04);
-  box-sizing: border-box;
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 30px 24px !important;
+  border: 1px solid rgba(225, 232, 234, 0.8) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03) !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important; /* Atau center jika ingin posisinya di tengah */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .value-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(54, 215, 231, 0.12);
+  box-shadow: 0 10px 25px rgba(41, 171, 226, 0.12);
 }
 
-/* Container Ikon Vektor */
-.value-icon {
-  width: 56px;
-  height: 56px;
-  background: #EBFBFC; /* Latar belakang lembut senada warna icon */
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
-  flex-shrink: 0;
-}
-
-.value-card h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #0F2A3F;
-  margin: 0 0 10px 0;
-}
-
-.value-card p {
-  font-size: 0.88rem;
-  color: #5A6E7F;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Penyesuaian Responsif HP */
+/* Responsif untuk HP (tetap 1 kolom ke bawah jika di layar kecil) */
 @media (max-width: 768px) {
   .values-grid {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
-  }
-
-  .value-card {
-    padding: 24px 20px !important;
-  }
-
-  .value-icon {
-    width: 48px !important;
-    height: 48px !important;
-    margin-bottom: 14px !important;
-  }
-
-  .value-icon svg {
-    width: 26px !important;
-    height: 26px !important;
+    padding: 0 16px !important;
   }
 }
 
 
-/* Container Kartu Putih */
-.arigal-card {
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 40px 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  border: 1px solid #f0f0f0;
-  max-width: 500px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
 
-/* Responsive SVG Container */
-.arigal-logo-wrapper {
-  width: 100%;
-  max-width: 380px;
-  display: flex;
-  justify-content: center;
-}
-
-.arigal-logo-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ================= MODE MOBILE ================= */
-@media (max-width: 768px) {
-  .arigal-card {
-    padding: 28px 20px !important;
-    border-radius: 16px !important;
-  }
+/* ========================================================== */
+/* PENGATURAN FOOTER (SEJAJAR & TIDAK TERLALU KE ATAS)        */
+/* ========================================================== */
+footer, .footer-container, .site-footer {
+  width: 100% !important;
+  box-sizing: border-box !important;
   
-  .arigal-logo-wrapper {
-    max-width: 290px !important;
+  /* Tambahkan padding atas dan bawah yang lebih longgar agar tidak terlalu ke atas */
+  padding: 60px 20px 40px 20px !important; 
+  
+  background-color: #0b192c !important; /* Sesuaikan warna latar gelap Anda */
+}
+
+/* Memastikan grid 3 kolom di dalam footer sejajar dan rapi */
+.footer-grid, .footer-content {
+  display: grid !important;
+  grid-template-columns: 2fr 1.5fr 1.5fr !important; /* Lebar kolom proporsional */
+  gap: 40px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  align-items: start !important; /* Memastikan bagian atas kolom sejajar rata */
+}
+
+/* Mengatur agar setiap judul kolom di footer (KANTOR PUSAT, HUBUNGI KAMI) sejajar */
+.footer-col h3, .footer-col h4 {
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+  .footer-grid, .footer-content {
+    grid-template-columns: 1fr !important; /* Jadi 1 kolom ke bawah di HP */
+    gap: 30px !important;
   }
+}
+
+
+.brand-title, 
+.navbar-brand span {
+  font-family: 'Poppins', 'Montserrat', sans-serif !important;
+  font-weight: 800 !important;
+  font-style: italic !important;
+  letter-spacing: 0.5px !important;
 }
