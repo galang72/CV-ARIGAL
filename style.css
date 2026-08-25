@@ -436,3 +436,248 @@ body {
     gap: 14px !important;
   }
 }
+
+
+
+/* ================= SOLUSI TEKNOLOGI KAMI (RESPONSIF) ================= */
+
+/* Container Utama Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Kolom di Desktop */
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Styling Kartu Layanan (Desktop) */
+.service-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(225, 232, 234, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0, 128, 255, 0.08);
+}
+
+/* Pembungkus Ikon (Desktop) */
+.service-icon {
+  width: 64px;
+  height: 64px;
+  background: #f0f7ff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f2a3f;
+  margin: 0 0 12px 0;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #5a6e7f;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ================= PENYESUAIAN MODE MOBILE ================= */
+@media (max-width: 768px) {
+  /* Berubah menjadi 1 Kolom di Mobile */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 0 16px !important;
+  }
+
+  /* Padding kartu lebih padat agar hemat ruang */
+  .service-card {
+    padding: 24px 20px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Ukuran Ikon menyesuaikan layar HP */
+  .service-icon {
+    width: 52px !important;
+    height: 52px !important;
+    margin-bottom: 14px !important;
+    border-radius: 10px !important;
+  }
+
+  .service-icon svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .service-card h3 {
+    font-size: 1.05rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .service-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+  }
+}
+
+
+/* Container Kartu Putih */
+.arigal-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Responsive SVG Container */
+.arigal-logo-wrapper {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  justify-content: center;
+}
+
+.arigal-logo-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+/* Styling Kartu */
+.value-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(225, 232, 234, 0.8);
+  box-shadow: 0 4px 16px rgba(15, 42, 63, 0.04);
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(54, 215, 231, 0.12);
+}
+
+/* Container Ikon Vektor */
+.value-icon {
+  width: 56px;
+  height: 56px;
+  background: #EBFBFC; /* Latar belakang lembut senada warna icon */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.value-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0F2A3F;
+  margin: 0 0 10px 0;
+}
+
+.value-card p {
+  font-size: 0.88rem;
+  color: #5A6E7F;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Penyesuaian Responsif HP */
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .value-card {
+    padding: 24px 20px !important;
+  }
+
+  .value-icon {
+    width: 48px !important;
+    height: 48px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .value-icon svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+}
+
+
+/* Container Kartu Putih */
+.arigal-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Responsive SVG Container */
+.arigal-logo-wrapper {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  justify-content: center;
+}
+
+.arigal-logo-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================= MODE MOBILE ================= */
+@media (max-width: 768px) {
+  .arigal-card {
+    padding: 28px 20px !important;
+    border-radius: 16px !important;
+  }
+  
+  .arigal-logo-wrapper {
+    max-width: 290px !important;
+  }
+}
