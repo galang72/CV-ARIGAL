@@ -12,25 +12,44 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://cv-arigal.vercel.app/#organization",
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://cv-arigal.vercel.app/#business",
       "name": "CV Arigal Solusi Mandiri",
+      "alternateName": "Arigal Solusi Mandiri",
       "url": "https://cv-arigal.vercel.app",
-      "logo": "https://cv-arigal.vercel.app/logo.png",
+      "logo": "https://cv-arigal.vercel.app/img/logo.png",
+      "image": "https://cv-arigal.vercel.app/img/logo.png",
+      "description": "Distributor perangkat IT dan solusi teknologi terpercaya untuk korporasi dan instansi pemerintahan.",
       "founder": {
         "@type": "Person",
         "name": "Galang Lian Kagura"
       },
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Bandung",
         "addressLocality": "Bandung",
+        "addressRegion": "Jawa Barat",
+        "postalCode": "40000",
         "addressCountry": "ID"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Service",
-        "availableLanguage": ["Indonesian"]
-      }
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-6.9175",
+        "longitude": "107.6191"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "priceRange": "$$"
     },
     {
       "@type": "WebSite",
@@ -38,7 +57,7 @@
       "url": "https://cv-arigal.vercel.app",
       "name": "CV Arigal Solusi Mandiri",
       "publisher": {
-        "@id": "https://cv-arigal.vercel.app/#organization"
+        "@id": "https://cv-arigal.vercel.app/#business"
       }
     },
     {
