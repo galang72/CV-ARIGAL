@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(:path*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "cv-arigal.vercel.app"
+        }
+      ],
+      "destination": "https://www.cvarigalsolusimandiri.web.id/:path*",
+      "permanent": true
+    }
+  ]
+}
