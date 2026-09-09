@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
-Sitemap: https://cv-arigal.vercel.app/sitemap.xml
+Sitemap: https://www.cvarigalsolusimandiri.web.id/sitemap.xml
