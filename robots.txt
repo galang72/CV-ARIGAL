@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://cv-arigal.vercel.app/sitemap.xml
